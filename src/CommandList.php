@@ -77,9 +77,9 @@ class x00 extends Command {
 
         $violated = array();
 
-        // FIXME: this checks for 16*8=128 zones; number of zones varies with different Integra models
+        // FIXME: this checks for 16*2=32 zones; number of zones varies with different Integra models
         for ($i = 0; $i < 16; $i++) {
-            for ($b = 0; $b < 8; $b++) {
+            for ($b = 0; $b < 2; $b++) {
                 if (pow(2, $b) & hexdec(bin2hex($raw[$i+3]))) { // 0xFE 0xFE 0x00 ..
                     $number = 8 * $i + $b + 1;
                     // TODO: self::PARTITION, self::OUTPUT, etc.
